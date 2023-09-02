@@ -15,27 +15,27 @@ import { BiSolidChevronsLeft , BiSolidChevronsRight} from 'react-icons/bi';
 export const src_object = [
   {
     id: 1,
-    image: "../../assets/carousel/China-tea-fields.jpg",
+    // image: "../../assets/carousel/China-tea-fields.jpg",
     image: img1,
   },
   {
     id: 2,
-    image: "../../assets/carousel/assam-tea.webp",
+    // image: "../../assets/carousel/assam-tea.webp",
     image: img2,
   },
   {
     id: 3,
-    image: "../../assets/carousel/field2.webp",
+    // image: "../../assets/carousel/field2.webp",
     image: img3,
   },
   {
     id: 4,
-    image: "../../assets/carousel/field3.webp",
+    // image: "../../assets/carousel/field3.webp",
     image: img4,
   },
   {
     id: 5,
-    image: "../../assets/carousel/field4.jpg",
+    // image: "../../assets/carousel/field4.jpg",
     image: img5,
   },
   {
@@ -50,7 +50,26 @@ export const src_object = [
   },
 ];
 const Banner = () => {
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent] = useState(0);
+
+  function slideLeft(){
+    if(current === 0)
+    {
+      setCurrent((src_object.length-1));
+    }
+    else
+      setCurrent(current-1)
+  }
+  function slideRight(){
+    if(current === (src_object.length-1))
+    {
+      console.log("executed")
+      setCurrent(0);
+    }
+    else 
+      setCurrent(current+1)
+  }
+  console.log("current value : ",current,src_object.length)
   return (
     <>
       <div className="carousel">
@@ -60,7 +79,7 @@ const Banner = () => {
               <div
                 key={index}
                 className={
-                  index === 0
+                  index === current
                     ? "carousel_card carousel_card_active"
                     : "carousel_card"
                 }
@@ -71,11 +90,8 @@ const Banner = () => {
           })}
           {/* <div className="carousel-left-arrow">&lsaquo;</div>
           <div className="carousel-right-arrow">&rsaquo;</div> */}
-          <div className="carousel-left-arrow"><BiSolidChevronsLeft  /></div>
-          <div className="carousel-right-arrow"><BiSolidChevronsRight  /></div>
-          {/* <div className="carousel_card">
-            <img className="img_card" src={img5} alt="img" />
-          </div> */}
+          <div className="carousel-left-arrow" onClick={slideLeft} ><BiSolidChevronsLeft  /></div>
+          <div className="carousel-right-arrow" onClick={slideRight}><BiSolidChevronsRight  /></div>
         </div>
       </div>
     </>
