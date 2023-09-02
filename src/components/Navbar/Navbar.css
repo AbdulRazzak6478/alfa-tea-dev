@@ -38,4 +38,11 @@
       margin-left: 0.8em;
     }
 }
-  
+.icon-border{
+  /* border: 2px solid black; */
+  /* border-radius: 50%; */
+  /* padding: 4px 4px; */
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}

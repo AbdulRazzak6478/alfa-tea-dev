@@ -1,15 +1,13 @@
 import React from "react";
 import { ThemeContext } from "../../Context/Theme";
 import "./Navbar.css";
-
-import CloseIcon from "@mui/icons-material/Close";
-import MenuIcon from "@mui/icons-material/Menu";
-import Brightness2Icon from "@mui/icons-material/Brightness2";
-import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import { GrMenu } from 'react-icons/gr';
+import { CgClose } from 'react-icons/cg';
+import {PiSunFill} from "react-icons/pi";
+import {FaMoon} from "react-icons/fa";
 import { Button } from "@chakra-ui/react";
-import { PiSignInFill, PiSignOutFill } from "react-icons/pi";
-import { VscSignIn } from "react-icons/vsc";
-import { BiLogIn, BiSignal2 } from "react-icons/bi";
+import { PiSignOutFill } from "react-icons/pi";
+import { BiLogIn } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -31,52 +29,52 @@ const Navbar = () => {
           className="nav__list"
         >
           <li className="nav__list-item">
-            <a
-              href="#home"
+            <Link
+              to="/#home"
               onClick={() => toggleNavList("#home")}
               className="link link--nav "
             >
               Home
-            </a>
+            </Link>
           </li>
           <li className="nav__list-item">
-            <a
-              href="#about"
+            <Link
+              to="/#about"
               onClick={() => toggleNavList("#about")}
               className="link link--nav"
             >
               About
-            </a>
+            </Link>
           </li>
           <li className="nav__list-item">
-            <a
-              href="#skills"
+            <Link
+              to="/#skills"
               onClick={() => toggleNavList("#skills")}
               className="link link--nav"
             >
               Categories
-            </a>
+            </Link>
           </li>
           <li className="nav__list-item">
-            <a
-              href="#projects"
+            <Link
+              to="/#projects"
               onClick={() => toggleNavList("#projects")}
               className="link link--nav"
             >
               Products
-            </a>
+            </Link>
           </li>
           <li className="nav__list-item">
-            <a
-              href="#contact"
+            <Link
+              to="/#contact"
               onClick={() => toggleNavList("#contact")}
               className="link link--nav"
             >
               Contact
-            </a>
+            </Link>
           </li>
           {/* </ul> */}
-          <Link to={"/login"} className=" btn" rel="noreferrer">
+          <Link to={"/login"} className=" btn" rel="noreferrer" onClick={()=>setShowNavList(!showNavList)}>
             <Button
               leftIcon={<BiLogIn size={"25px"} />}
               colorScheme="messenger"
@@ -85,7 +83,7 @@ const Navbar = () => {
               Login
             </Button>
           </Link>
-          <Link to={"/signup"} className="btn">
+          <Link to={"/signup"} className="btn" onClick={()=>setShowNavList(!showNavList)}>
             <Button
               rightIcon={<PiSignOutFill size={"25px"} />}
               colorScheme="blue"
@@ -98,11 +96,11 @@ const Navbar = () => {
           <button
             type="button"
             onClick={toggeltheme}
-            className="btn btn--icon nav__theme"
+            className="nav__theme"
             aria-label="toggle theme"
             style={{ backgroundColor: "inherit" }}
           >
-            {themename === "dark" ? <WbSunnyIcon /> : <Brightness2Icon />}
+            <span className="">{themename === "dark" ? <PiSunFill size={'25px'}  /> : <FaMoon size={'25px'} />}</span>
           </button>
           <button
             type="button"
@@ -110,7 +108,7 @@ const Navbar = () => {
             className="btn btn--icon nav__hamburger"
             aria-label="toggle navigation"
           >
-            {showNavList ? <CloseIcon /> : <MenuIcon />}
+            {showNavList ? <CgClose size={'25px'} /> : <GrMenu size={'25px'} />}
           </button>
       </nav>
     </>

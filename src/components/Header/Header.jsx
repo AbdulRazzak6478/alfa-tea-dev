@@ -4,6 +4,7 @@ import { ThemeContext } from "../../Context/Theme.jsx";
 import Logo from "../../assets/logo.png";
 
 import "./Header.css";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [{ themename }] = React.useContext(ThemeContext);
 
@@ -11,10 +12,10 @@ const Header = () => {
     <>
       <header className={"header center " + themename}>
         <h3 className="logo-header">
-          <a href="#home" className="logo">
+          <Link to="/#home" className="logo">
            ALFA TEA
            {/* <img src={Logo} alt="logo" /> */}
-          </a>
+          </Link>
         </h3>
         <Navbar />
       </header>
