@@ -15,7 +15,7 @@
   /* .btn{
     align-items: center;
   } */
-  @media (max-width: 600px) {
+  @media (max-width: 678px) {
     .nav__list {
       display: none;
       flex-direction: column;

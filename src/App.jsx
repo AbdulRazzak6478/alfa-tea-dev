@@ -10,6 +10,7 @@ import Login from "./components/Login/Login";
 import { Button } from "@chakra-ui/react";
 import { PiSignOutFill, PiSignInFill } from "react-icons/pi";
 import Footer from "./components/Footer/Footer";
+import Banner from "./components/Banner/Banner";
 
 function App() {
   const [{ themename }] = React.useContext(ThemeContext);
@@ -23,32 +24,10 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/" element={<Banner />} />
           </Routes>
-          {/* <Login /> */}
-          {/* <SignUp /> */}
-          <Button colorScheme="teal" variant="solid">
-            Button
-          </Button>
-          <Button colorScheme="teal" variant="outline">
-            Button
-          </Button>
-          <Button
-            leftIcon={<PiSignOutFill />}
-            colorScheme="teal"
-            variant="solid"
-          >
-            Email
-          </Button>
-          <Button
-            rightIcon={<PiSignInFill />}
-            colorScheme="teal"
-            variant="outline"
-          >
-            Call us
-          </Button>
-          <h1>hello world</h1>
+          <Footer />
         </div>
-        <Footer />
       </Router>
     </>
   );
