@@ -43,3 +43,19 @@
     height: 80vh;
     object-fit: cover;
 }
+
+.carousel_pagination{
+    position: absolute;
+    bottom: 10px;
+    left:50%;
+    transform: translate(-50%,0);
+}
+.pagination_dot{
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+}

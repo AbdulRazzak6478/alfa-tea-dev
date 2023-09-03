@@ -10,7 +10,7 @@ import img7 from "../../assets/carousel/field6.jpg";
 // import "./carousel.css";
 import "./Banner.css";
 
-import { BiSolidChevronsLeft , BiSolidChevronsRight} from 'react-icons/bi';
+import { BiSolidChevronsLeft, BiSolidChevronsRight } from "react-icons/bi";
 
 export const src_object = [
   {
@@ -52,24 +52,18 @@ export const src_object = [
 const Banner = () => {
   const [current, setCurrent] = useState(0);
 
-  function slideLeft(){
-    if(current === 0)
-    {
-      setCurrent((src_object.length-1));
-    }
-    else
-      setCurrent(current-1)
+  function slideLeft() {
+    if (current === 0) {
+      setCurrent(src_object.length - 1);
+    } else setCurrent(current - 1);
   }
-  function slideRight(){
-    if(current === (src_object.length-1))
-    {
-      console.log("executed")
+  function slideRight() {
+    if (current === src_object.length - 1) {
+      console.log("executed");
       setCurrent(0);
-    }
-    else 
-      setCurrent(current+1)
+    } else setCurrent(current + 1);
   }
-  console.log("current value : ",current,src_object.length)
+  console.log("current value : ", current, src_object.length);
   return (
     <>
       <div className="carousel">
@@ -90,8 +84,27 @@ const Banner = () => {
           })}
           {/* <div className="carousel-left-arrow">&lsaquo;</div>
           <div className="carousel-right-arrow">&rsaquo;</div> */}
-          <div className="carousel-left-arrow" onClick={slideLeft} ><BiSolidChevronsLeft  /></div>
-          <div className="carousel-right-arrow" onClick={slideRight}><BiSolidChevronsRight  /></div>
+          <div className="carousel-left-arrow" onClick={slideLeft}>
+            <BiSolidChevronsLeft />
+          </div>
+          <div className="carousel-right-arrow" onClick={slideRight}>
+            <BiSolidChevronsRight />
+          </div>
+          <div className="carousel_pagination">
+            {src_object.map((image, index) => {
+              return (
+                <div
+                  key={index}
+                  onClick={()=>setCurrent(index)}
+                  className={
+                    index === current
+                      ? "pagination_dot pagination_dot_active"
+                      : "pagination_dot"
+                  }
+                ></div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>
