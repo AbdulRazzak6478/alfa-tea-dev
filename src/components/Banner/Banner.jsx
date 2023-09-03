@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import img1 from "../../assets/carousel/China-tea-fields.jpg";
 import img2 from "../../assets/carousel/assam-tea.webp";
 import img3 from "../../assets/carousel/field2.webp";
@@ -6,8 +6,6 @@ import img4 from "../../assets/carousel/field3.webp";
 import img5 from "../../assets/carousel/field4.jpg";
 import img6 from "../../assets/carousel/field5.jpg";
 import img7 from "../../assets/carousel/field6.jpg";
-// import img7 from "../../assets/sameSize/img.jpg";
-// import "./carousel.css";
 import "./Banner.css";
 
 import { BiSolidChevronsLeft, BiSolidChevronsRight } from "react-icons/bi";
@@ -51,6 +49,15 @@ export const src_object = [
 ];
 const Banner = () => {
   const [current, setCurrent] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(true);
+  let timerOut = null;
+  useEffect(() => {
+    timerOut =
+      autoPlay &&
+      setTimeout(() => {
+        slideRight();
+      }, 4000);
+  });
 
   function slideLeft() {
     if (current === 0) {
@@ -67,7 +74,17 @@ const Banner = () => {
   return (
     <>
       <div className="carousel">
-        <div className="carousel_wrapper">
+        <div
+          className="carousel_wrapper"
+          onMouseEnter={() => {
+            setAutoPlay(false);
+            clearTimeout(timerOut);
+          }}
+          onMouseLeave={() => {
+            setAutoPlay(true);
+            clearTimeout(timerOut);
+          }}
+        >
           {src_object.map((image, index) => {
             return (
               <div
@@ -95,7 +112,7 @@ const Banner = () => {
               return (
                 <div
                   key={index}
-                  onClick={()=>setCurrent(index)}
+                  onClick={() => setCurrent(index)}
                   className={
                     index === current
                       ? "pagination_dot pagination_dot_active"
