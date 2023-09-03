@@ -35,7 +35,7 @@ main {
 }
 
 .section {
-  margin-top: 5em;
+  margin-top: 2em;
 }
 
 .section__title {
@@ -151,4 +151,7 @@ main {
   .section {
     margin-top: 4em;
   }
+}
+.about__contact {
+  margin-top: 2.4em;
 }
