@@ -12,14 +12,14 @@ import {
   
   const SignUp = () => {
     return (
-      <Container maxW={'container.xl'} h={'100vh'} p={['3','16']}>
+      <Container maxW={'container.xl'} h={'100vh'} p={['3','2']}>
         <form>
           <VStack
             alignItems={'stretch'}
             spacing={'8'}
             w={['full', '96']}
             m={'auto'}
-            my={'16'}
+            my={'0px'}
           >
             <Heading alignSelf={'center'}>ALFA TEA</Heading>
 

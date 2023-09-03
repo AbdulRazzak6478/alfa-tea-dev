@@ -48,8 +48,8 @@ const Navbar = () => {
           </li>
           <li className="nav__list-item">
             <Link
-              to="/#skills"
-              onClick={() => toggleNavList("#skills")}
+              to="/#categories"
+              onClick={() => toggleNavList("#categories")}
               className="link link--nav"
             >
               Categories
@@ -57,8 +57,8 @@ const Navbar = () => {
           </li>
           <li className="nav__list-item">
             <Link
-              to="/#projects"
-              onClick={() => toggleNavList("#projects")}
+              to="/#products"
+              onClick={() => toggleNavList("#products")}
               className="link link--nav"
             >
               Products

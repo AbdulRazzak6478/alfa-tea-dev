@@ -1,0 +1,17 @@
+.scroll-top {
+    position: fixed;
+    bottom: 2em;
+    right: 1em;
+    background-color: transparent;
+  }
+  .upArrow{
+    font-size: 50px;
+    color: var(--clr-primary);
+    background-color: var(--clr-bg);
+  }
+  
+  @media (max-width: 900px) {
+    .scroll-top {
+      display: none;
+    }
+  }

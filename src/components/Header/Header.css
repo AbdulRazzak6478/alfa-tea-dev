@@ -1,12 +1,15 @@
 .header {
-  margin: 0 1rem ;
+  /* margin: 0 1rem ; */
     height: 6em;
     /* max-width: 1100px; */
-    width: 95%;
+    width: 100%;
     /* margin: 0 auto; */
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
+    /* border: 1px solid black; */
+    /* --webkit-box-shadow : 0px 0px 11px 3px rgba(0,0,0,.15);
+    box-shadow:  0px 0px 11px 3px rgba(0,0,0,.65); */
 }
 .logo-header{
   top :-20px;

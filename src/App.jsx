@@ -10,7 +10,7 @@ import Login from "./components/Login/Login";
 import { Button } from "@chakra-ui/react";
 import { PiSignOutFill, PiSignInFill } from "react-icons/pi";
 import Footer from "./components/Footer/Footer";
-import Banner from "./components/Banner/Banner";
+import Home from "./components/Home";
 
 function App() {
   const [{ themename }] = React.useContext(ThemeContext);
@@ -20,11 +20,13 @@ function App() {
     <>
       <Router>
         <div className={`${themename} app `}>
-          <Header />
+          <section id="#home top">
+            <Header />
+          </section>
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/" element={<Banner />} />
+            <Route path="/" element={<Home />} />
           </Routes>
           <Footer />
         </div>
